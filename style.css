@@ -46,6 +46,20 @@ body {
     justify-content: center;
 }
 
+.container.flash-red{
+    background-color: red;
+}
+
+.container.flash-green{
+    background-color: green;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .word {
     display: flex;
     background-color: blue;
@@ -54,6 +68,7 @@ body {
     border-radius: 5px;
     max-width: 200px;
     justify-content: center;
+    text-align: center;
 }
 
 .input {
