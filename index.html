@@ -8,20 +8,66 @@
     <title>Write Reverse Text Game</title>
     <script src="./index.js" defer></script>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900;1000&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <div class="title">Write Reverse</div>
-    <div class="game-container">
-        <div class="header">
-            <div class="container" id="time"></div>
-            <div id="message" class="message"></div>
-            <div class="container" id="score">0</div>
+    <div class="main-container">
+        <div class="weekly-leaders">
+            <div class="sub-title">Weekly Leaders</div>
+            <div class="leader-container">
+                <div class="leader-name">OsmanKagan</div>
+                <div class="leader-score">126</div>
+            </div>
+            <div class="leader-container">
+                <div class="leader-name">Writer123</div>
+                <div class="leader-score">114</div>
+            </div>
+            <div class="leader-container">
+                <div class="leader-name">Engin Demirog</div>
+                <div class="leader-score">95</div>
+            </div>
+            <div class="leader-container">
+                <div class="leader-name">Pala</div>
+                <div class="leader-score">87</div>
+            </div>
         </div>
-        <div class="word" id="word"></div>
-        <input type="text" class="input" id="input" name="input"></input>
-        <button class="button" id="button" onclick="submitInput()" value="Submit"></button>
+        <div class="game-container">
+            <div class="header">
+                <div class="container" id="time"></div>
+                <div id="message" class="message"></div>
+                <div class="container" id="score">0</div>
+            </div>
+            <div class="word" id="word"></div>
+            <input type="text" class="input" id="input" name="input"></input>
+            <button class="button" id="button" onclick="submitInput()" value="Submit"></button>
+        </div>
+        <div class="all-time-leaders">
+            <div class="sub-title">All Time Leaders</div>
+            <div class="leader-container">
+                <div class="leader-name">Monshor</div>
+                <div class="leader-score">156</div>
+            </div>
+            <div class="leader-container">
+                <div class="leader-name">AtesBey</div>
+                <div class="leader-score">134</div>
+            </div>
+            <div class="leader-container">
+                <div class="leader-name">OsmanKagan</div>
+                <div class="leader-score">126</div>
+            </div>
+            <div class="leader-container">
+                <div class="leader-name">JokerMelih</div>
+                <div class="leader-score">122</div>
+            </div>
+        </div>
     </div>
+
 </body>
 
 </html>

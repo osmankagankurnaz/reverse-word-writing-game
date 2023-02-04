@@ -1,16 +1,15 @@
-var score = 0;
 
+var score = 0;
 document.getElementById("word").innerHTML = "Welcome Game";
 document.getElementById("button").innerHTML = "Start";
 document.getElementById("time").innerHTML = "time";
 document.getElementById("score").innerHTML = "score";
-
 document.getElementById("input").disabled = true;
 
 document.querySelector("button").addEventListener("click", function () {
     if (document.getElementById("button").innerHTML == "Start") {
         startGame();
-        showTime(3, 60);
+        showTime(3, 5);
         document.getElementById("button").innerHTML = "Submit";
     }
     if (document.getElementById("button").innerHTML == "Restart") {
@@ -26,7 +25,7 @@ function startGame() {
 
 function resetGame() {
     score = 0;
-    randomWord = "";
+    document.getElementById("word").innerHTML = "Ready?";
     document.getElementById("score").innerHTML = score;
     document.getElementById("message").style.display = "none";
 }
@@ -55,6 +54,7 @@ function showTime(c, t) {
         } else if (t > 0) {
             document.getElementById("button").disabled = false;
             document.getElementById("input").disabled = false;
+            window.onload();
             t--;
             document.getElementById("time").innerHTML = t;
             if (t == 0) {
@@ -67,6 +67,10 @@ function showTime(c, t) {
     }, 1000);
 }
 
+window.onload = function () {
+    document.querySelector("input").focus();
+};
+
 async function getRandomWord() {
     if (document.getElementById("button").innerHTML == "Submit" || "Start") {
         const response = await fetch('words.json');
@@ -78,22 +82,30 @@ async function getRandomWord() {
         document.getElementById("word").innerHTML = randomWord;
         return randomWord;
     }
-
 }
 
 function scoringFunc(input, word) {
     if (document.getElementById("button").innerHTML == "Submit") {
         if (input == reverseText(word)) {
             score += word.length;
+            flashDiv("green");
             console.log(score);
         } else if (input != reverseText(word)) {
             score -= word.length;
+            flashDiv("red");
             console.log(score);
         }
         getRandomWord();
         return document.getElementById("score").innerHTML = score;
     }
+}
 
+function flashDiv(color) {
+    var div = document.getElementById("score");
+    div.classList.add("flash-" + color);
+    setTimeout(function () {
+        div.classList.remove("flash-" + color);
+    }, 1000);
 }
 
 const reverseText = function (word) {
