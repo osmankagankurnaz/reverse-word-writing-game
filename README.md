@@ -1,6 +1,6 @@
 # Application Interface
 
-![application-interface](screenshot.png)
+![application-interface](application-interface.png)
 
 # Vercel App Link
 
