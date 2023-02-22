@@ -9,7 +9,7 @@ document.getElementById("input").disabled = true;
 document.querySelector("button").addEventListener("click", function () {
     if (document.getElementById("button").innerHTML == "Start") {
         startGame();
-        showTime(3, 5);
+        showTime(3, 60);
         document.getElementById("button").innerHTML = "Submit";
     }
     if (document.getElementById("button").innerHTML == "Restart") {
